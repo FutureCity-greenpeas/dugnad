@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         fontFamily: 'Alegreya',
       ),
-      home: MyHomePage(title: 'asd'),
+      home: MyHomePage(title: 'Lakó-kör'),
     );
   }
 }

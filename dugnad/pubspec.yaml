@@ -66,12 +66,19 @@ flutter:
     #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
+  #assets:
+    #- assets/images/cards.png
   fonts:
     - family: Alegreya
       fonts:
-        - asset: fonts/Alegreya-Regular.ttf
-        - asset: fonts/Alegreya-Bold.ttf
+        - asset: assets/fonts/Alegreya-Regular.ttf
+
+        - asset: assets/fonts/Alegreya-SemiBold.ttf
+          weight: 300
+
+        - asset: assets/fonts/Alegreya-Bold.ttf
           weight: 700
+
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
