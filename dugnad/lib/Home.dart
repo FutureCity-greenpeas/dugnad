@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,17 +25,113 @@ class HomeScreen extends StatelessWidget {
                     flex: 4,
                     child: Container(
                       child: ListTile(
-                        leading: Icon(Icons.album),
-                        title: Text('The Enchanted Nightingale'),
-                        subtitle: Text(
-                            'Music by Julie Gable. Lyrics by Sidney Stein.'),
+                        leading: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.new_releases_rounded),
+                            Text(
+                              "Hírdetmények",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   Expanded(
                     flex: 6,
-                    child: Container(color: Colors.blue),
-                  )
+                    child: Column(
+                      children: [
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: ColoredBox(
+                                color: Colors.black12,
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.all(5),
+                                      width: 180,
+                                      height: 65,
+                                      child: Row(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(Icons.warning_amber_rounded,
+                                                  size: 15),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.fromLTRB(
+                                                        10, 0, 0, 0),
+                                                child: Text(
+                                                  "2021.03.25-én\nérkezik a házba a\nkéményseprő!!",
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: ColoredBox(
+                                color: Colors.black12,
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.all(5),
+                                      width: 180,
+                                      height: 65,
+                                      child: Row(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(Icons.warning_amber_rounded,
+                                                  size: 15),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.fromLTRB(
+                                                        10, 0, 0, 0),
+                                                child: Text(
+                                                  "2021.03.26-én\njönnek vízórát\nleolvasni!!",
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
