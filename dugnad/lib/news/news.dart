@@ -5,19 +5,18 @@ class News extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Hirök"),
+      ),
       body: Center(
         child: Column(
-          children: [NewsRow(), NewsRow(), NewsRow()],
+          children: [
+            NewsRow(),
+            NewsRow(),
+            NewsRow(),
+          ],
           mainAxisAlignment: MainAxisAlignment.start,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }
