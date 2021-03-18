@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dugnad/news/news.dart';
 import 'package:dugnad/Home.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'Üdv a saját Lakókörödben'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -44,7 +45,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: HomeScreen(),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => News()),
+          );
+        },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
