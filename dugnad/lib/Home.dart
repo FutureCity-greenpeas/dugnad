@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
         Container(
           padding: EdgeInsets.all(20),
           width: 500,
-          height: 200,
+          height: 400,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Card(
@@ -20,23 +20,29 @@ class HomeScreen extends StatelessWidget {
               ),
               elevation: 5,
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   Expanded(
                     flex: 4,
                     child: Container(
                       child: ListTile(
-                        leading: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(Icons.new_releases_rounded),
-                            Text(
-                              "Hírdetmények",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
+                        leading: Padding(
+                          padding: EdgeInsets.fromLTRB(0, 0, 0, 1),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Icon(Icons.new_releases_rounded,
+                                  color: Colors.red),
+                              Text(
+                                "Hírdetmények",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -70,7 +76,46 @@ class HomeScreen extends StatelessWidget {
                                                     const EdgeInsets.fromLTRB(
                                                         10, 0, 0, 0),
                                                 child: Text(
-                                                  "2021.03.25-én\nérkezik a házba a\nkéményseprő!!",
+                                                  "2021.03.25-én\nérkezik a házba a\nkéményseprő",
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: ColoredBox(
+                                color: Colors.black12,
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.all(5),
+                                      width: 180,
+                                      height: 65,
+                                      child: Row(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(Icons.warning_amber_rounded,
+                                                  size: 15),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.fromLTRB(
+                                                        10, 0, 0, 0),
+                                                child: Text(
+                                                  "2021.03.26-én\njönnek vízórát\nleolvasni",
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -112,7 +157,91 @@ class HomeScreen extends StatelessWidget {
                                                     const EdgeInsets.fromLTRB(
                                                         10, 0, 0, 0),
                                                 child: Text(
-                                                  "2021.03.26-én\njönnek vízórát\nleolvasni!!",
+                                                  "2021.03.26-én\njönnek vízórát\nleolvasni",
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: ColoredBox(
+                                color: Colors.black12,
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.all(5),
+                                      width: 180,
+                                      height: 65,
+                                      child: Row(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(Icons.warning_amber_rounded,
+                                                  size: 15),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.fromLTRB(
+                                                        10, 0, 0, 0),
+                                                child: Text(
+                                                  "2021.03.26-én\njönnek vízórát\nleolvasni",
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: ColoredBox(
+                                color: Colors.black12,
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.all(5),
+                                      width: 180,
+                                      height: 65,
+                                      child: Row(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(Icons.warning_amber_rounded,
+                                                  size: 15),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.fromLTRB(
+                                                        10, 0, 0, 0),
+                                                child: Text(
+                                                  "2021.03.26-én\njönnek vízórát\nleolvasni",
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.bold,
                                                   ),
