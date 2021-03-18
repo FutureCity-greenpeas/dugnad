@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dugnad/news/news.dart';
 import 'package:dugnad/Home.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,9 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.green,
-        fontFamily: 'Alegreya',
-      ),
+          primarySwatch: Colors.green,
+          //fontFamily: 'Alegreya',
+          textTheme: TextTheme(
+            bodyText2: TextStyle(color: Colors.white),
+          ),
+          iconTheme: IconThemeData(color: Colors.white),
+          scaffoldBackgroundColor: HexColor("253334")),
       home: MyHomePage(title: 'Lakó-kör'),
     );
   }
@@ -42,7 +47,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+          child: Text(
+            widget.title,
+            style: TextStyle(
+                fontSize: 35,
+                fontWeight: FontWeight.w300,
+                fontFamily: "Alegreya"),
+          ),
+        ),
       ),
       body: HomeScreen(),
       floatingActionButton: FloatingActionButton(
