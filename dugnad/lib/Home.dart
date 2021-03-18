@@ -21,11 +21,18 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    flex: 5,
-                    child: Container(color: Colors.red),
+                    flex: 4,
+                    child: Container(
+                      child: ListTile(
+                        leading: Icon(Icons.album),
+                        title: Text('The Enchanted Nightingale'),
+                        subtitle: Text(
+                            'Music by Julie Gable. Lyrics by Sidney Stein.'),
+                      ),
+                    ),
                   ),
                   Expanded(
-                    flex: 5,
+                    flex: 6,
                     child: Container(color: Colors.blue),
                   )
                 ],
