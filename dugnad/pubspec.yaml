@@ -67,8 +67,6 @@ flutter:
     #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-  assets:
-    - assets/images/Vector_3.png
   fonts:
     - family: Alegreya
       fonts:
