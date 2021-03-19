@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Travel extends StatefulWidget {
   Travel({Key key}) : super(key: key);
 
@@ -9,7 +8,6 @@ class Travel extends StatefulWidget {
 }
 
 class _TravelState extends State<Travel> {
-
   @override
   void initState() {
     super.initState();
@@ -24,10 +22,31 @@ class _TravelState extends State<Travel> {
   Widget build(BuildContext context) {
     final title = 'Közös utazas';
     return Scaffold(
-  appBar: AppBar(
-        title: Text(title),
-        backgroundColor: Color(0xFF253334),
-        elevation: 0.0,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: CircleAvatar(
+                radius: 20.0,
+                backgroundImage: AssetImage('assets/images/lakokor.png'),
+                backgroundColor: Colors.transparent,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+              child: Text(
+                "Közös utazás",
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: "Alegreya"),
+              ),
+            ),
+          ],
+        ),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -41,4 +60,3 @@ class _TravelState extends State<Travel> {
     );
   }
 }
-

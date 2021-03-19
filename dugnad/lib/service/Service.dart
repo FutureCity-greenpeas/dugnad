@@ -50,7 +50,7 @@ class _ServiceState extends State<Service> {
               child: Text(
                 "Közeli Szolgáltatások",
                 style: TextStyle(
-                    fontSize: 35,
+                    fontSize: 25,
                     fontWeight: FontWeight.w300,
                     fontFamily: "Alegreya"),
               ),

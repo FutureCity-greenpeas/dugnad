@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Grocery extends StatefulWidget {
   Grocery({Key key}) : super(key: key);
 
@@ -9,7 +8,6 @@ class Grocery extends StatefulWidget {
 }
 
 class _GroceryState extends State<Grocery> {
-
   @override
   void initState() {
     super.initState();
@@ -24,10 +22,31 @@ class _GroceryState extends State<Grocery> {
   Widget build(BuildContext context) {
     final title = 'Közös bevásárlás';
     return Scaffold(
-  appBar: AppBar(
-        title: Text(title),
-        backgroundColor: Color(0xFF253334),
-        elevation: 0.0,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: CircleAvatar(
+                radius: 20.0,
+                backgroundImage: AssetImage('assets/images/lakokor.png'),
+                backgroundColor: Colors.transparent,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+              child: Text(
+                "Közös bevásárlás",
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: "Alegreya"),
+              ),
+            ),
+          ],
+        ),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -41,4 +60,3 @@ class _GroceryState extends State<Grocery> {
     );
   }
 }
-
