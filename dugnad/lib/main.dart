@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:dugnad/news/news.dart';
-import 'package:dugnad/markets/market.dart';
 import 'package:dugnad/Home.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -69,16 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: HomeScreen(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Markets()),
-          );
-        },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
     );
   }
 }
