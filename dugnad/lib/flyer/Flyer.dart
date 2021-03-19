@@ -37,12 +37,20 @@ class _FlyerState extends State<Flyer> {
         ),
       ),
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ListCard("assets/images/tesco.png"),
-            Text("flyers"),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ListCard("assets/images/edigital.jpg",
+                  "https://www.kimbino.hu/extreme-digital/aktualis-ajanlatok-keddtol-16-03-2021/#page_1"),
+              ListCard("assets/images/tesco.png",
+                  "https://tesco.hu/katalogus-oldalak-old/hipermarket/tesco-ujsag-2021-03-18/"),
+              ListCard("assets/images/aldi.png",
+                  "https://szorolap.aldi.hu/emag/hu_HU/print/Husveti_katalogus_2021_v5/#1"),
+              ListCard("assets/images/avon.png",
+                  "https://avononline.avon.hu/e-katalogus/avon-katalogus-2021-marcius"),
+            ],
+          ),
         ),
       ),
     );
