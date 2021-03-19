@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.white),
           scaffoldBackgroundColor: HexColor("253334")),
       home: MyHomePage(title: 'Lakó-kör'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
