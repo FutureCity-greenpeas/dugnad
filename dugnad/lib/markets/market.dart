@@ -177,23 +177,24 @@ class _DistanceSliderState extends State {
                         setState(() {
                           DistanceSliderValue = newValue.round();
                           (DistanceSliderValue > 399)
-                              ? visibility18 = true
+                              ? visibility400 = true
                               : visibility400 = false;
                           (DistanceSliderValue > 499)
-                              ? visibility18 = true
+                              ? visibility500 = true
                               : visibility500 = false;
                           (DistanceSliderValue > 799)
-                              ? visibility18 = true
+                              ? visibility800 = true
                               : visibility800 = false;
                           (DistanceSliderValue > 999)
-                              ? visibility18 = true
+                              ? visibility1 = true
                               : visibility1 = false;
                           (DistanceSliderValue > 1499)
-                              ? visibility18 = true
+                              ? visibility15 = true
                               : visibility15 = false;
                           (DistanceSliderValue > 1799)
                               ? visibility18 = true
                               : visibility18 = false;
+                              Navigator.pop(context);
                           Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -342,7 +343,7 @@ class _market extends State {
 
 
 class MarketItem extends StatefulWidget {
-  
+
   String title;
   String sub;
   String distance;

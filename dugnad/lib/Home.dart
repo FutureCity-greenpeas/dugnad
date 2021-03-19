@@ -323,8 +323,10 @@ class HomeScreen extends StatelessWidget {
                     child: InkWell(
                       splashColor: Colors.teal.withAlpha(30),
                       onTap: () => {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Service()))
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Service(slider: 1800)))
                       },
                       child: Container(
                         padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
