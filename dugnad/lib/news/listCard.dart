@@ -14,7 +14,7 @@ Widget listcard(ListItem item) {
           size: 48.0,
         ),
         title: Text(item.title),
-        subtitle: Text(item.author),
+        subtitle: Container(child: Text(item.author)),
         trailing: Text(
           item.date,
           style: TextStyle(color: Colors.black),

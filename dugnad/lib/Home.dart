@@ -32,21 +32,18 @@ class HomeScreen extends StatelessWidget {
                             splashColor: Colors.teal.withAlpha(30),
                             onTap: () => {print("asdasd")},
                             child: ListTile(
-                              leading: Padding(
-                                padding: EdgeInsets.fromLTRB(0, 0, 0, 13),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      "HÍRDETŐ\nTÁBLA",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w300,
-                                        fontSize: 16,
-                                      ),
+                              leading: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    "HÍRDETŐTÁBLA",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 16,
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -58,51 +55,84 @@ class HomeScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             SizedBox(height: 5),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: ColoredBox(
-                                    color: Colors.transparent,
-                                    child: Column(
+                            ColoredBox(
+                              color: Colors.transparent,
+                              child: Column(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(5),
+                                    width: 180,
+                                    height: 130,
+                                    child: Row(
                                       children: [
-                                        Container(
-                                          padding: EdgeInsets.all(5),
-                                          width: 180,
-                                          height: 130,
-                                          child: Row(
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text(
-                                                        "Vízóra leolvasás",
-                                                        style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontSize: 16),
-                                                      ),
-                                                      Text(
-                                                        "Értesítjük a kedves\nlakókat, hogy\n2021.04.05-én\nvízóraleolvasás\nlesz a lakásban.",
-                                                        style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w100),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
+                                        Row(
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "Vízóra leolvasás",
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontSize: 16),
+                                                ),
+                                                Text(
+                                                  "Értesítjük a kedves\nlakókat, hogy\n2021.04.05-én\nvízóraleolvasás\nlesz a lakásban.",
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w100),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                ColoredBox(
+                                  color: Colors.transparent,
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        padding: EdgeInsets.all(5),
+                                        width: 180,
+                                        height: 130,
+                                        child: Row(
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "Közös költség\nelmaradások",
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontSize: 16),
+                                                ),
+                                                Text(
+                                                  "Kérjük a kedves lakókat, \nhogy az elmaradásokat \n2021.03.30-ig legynek\nszivesek befizetni",
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w100),
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
@@ -111,99 +141,34 @@ class HomeScreen extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: ColoredBox(
-                                    color: Colors.transparent,
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          padding: EdgeInsets.all(5),
-                                          width: 180,
-                                          height: 130,
-                                          child: Row(
+                                Column(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.all(5),
+                                      child: Row(
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              Row(
-                                                children: [
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text(
-                                                        "Közös költség\nelmaradások",
-                                                        style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontSize: 16),
-                                                      ),
-                                                      Text(
-                                                        "Kérjük a kedves\nlakókat, hogy\naz elmaradásokat\n2021.03.30-ig legynek\nszivesek befizetni",
-                                                        style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w100),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
+                                              Text(
+                                                "Esedékes tevékenység",
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: 16),
+                                              ),
+                                              Text(
+                                                "A havi közösségi\ntevékenységgel \nkapcsolatos\nlegújabb információk\nelérhetővé váltak.\nReméljük sokatokkal\ntalálkozunk",
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.w100),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 5),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: ColoredBox(
-                                    color: Colors.transparent,
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          padding: EdgeInsets.all(5),
-                                          width: 180,
-                                          height: 130,
-                                          child: Row(
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text(
-                                                        "Esedékes tevékenység",
-                                                        style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontSize: 16),
-                                                      ),
-                                                      Text(
-                                                        "A havi közösségi\ntevékenységgel \nkapcsolatos\nlegújabb információk\nelérhetővé váltak.\nReméljük sokatokkal\ntalálkozunk",
-                                                        style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w100),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  ],
                                 ),
                               ],
                             ),
