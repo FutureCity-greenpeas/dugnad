@@ -1,4 +1,5 @@
 import 'package:dugnad/markets/market.dart';
+import 'package:dugnad/news/news.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -28,7 +29,10 @@ class HomeScreen extends StatelessWidget {
                 elevation: 5,
                 child: InkWell(
                   splashColor: Colors.teal.withAlpha(30),
-                  onTap: () => {print("asdasd")},
+                  onTap: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => News()))
+                  },
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
