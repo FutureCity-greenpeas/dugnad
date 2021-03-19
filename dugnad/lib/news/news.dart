@@ -12,10 +12,16 @@ class News extends StatefulWidget {
 class _NewsState extends State<News> with SingleTickerProviderStateMixin {
   List<Tab> _tabList = [
     Tab(
-      child: Text("Általános"),
+      child: Text(
+        "Általános",
+        style: TextStyle(fontWeight: FontWeight.w300, fontFamily: "Alegreya"),
+      ),
     ),
     Tab(
-      child: Text("Közösségi"),
+      child: Text(
+        "Közösségi",
+        style: TextStyle(fontWeight: FontWeight.w300, fontFamily: "Alegreya"),
+      ),
     ),
   ];
 
@@ -94,13 +100,47 @@ class _NewsState extends State<News> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
+  /*
+  bottom: PreferredSize(
+            preferredSize: Size.fromHeight(30.0),
+            child: TabBar(
+              indicatorColor: Colors.green[900],
+              isScrollable: false,
+              controller: _tabController,
+              tabs: _tabList,
+            ),
+          ),
+
+  */
   TabController _tabController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          elevation: 0.0,
-          title: Text("Hírdetőtábla"),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          title: Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                child: CircleAvatar(
+                  radius: 20.0,
+                  backgroundImage: AssetImage('assets/images/lakokor.png'),
+                  backgroundColor: Colors.transparent,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                child: Text(
+                  "Hírdetőtábla",
+                  style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.w300,
+                      fontFamily: "Alegreya"),
+                ),
+              ),
+            ],
+          ),
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(30.0),
             child: TabBar(

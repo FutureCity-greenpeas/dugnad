@@ -33,12 +33,32 @@ class _MarketState extends State<Markets> {
   @override
   Widget build(BuildContext context) {
     DistanceSliderValue = this.slider;
-    final title = 'Közeli üzletek';
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
-        backgroundColor: Color(0xFF253334),
-        elevation: 0.0,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: CircleAvatar(
+                radius: 20.0,
+                backgroundImage: AssetImage('assets/images/lakokor.png'),
+                backgroundColor: Colors.transparent,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+              child: Text(
+                "Közeli üzletek",
+                style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: "Alegreya"),
+              ),
+            ),
+          ],
+        ),
       ),
       body: Center(child: _list().build(context)),
     );
@@ -74,12 +94,8 @@ Widget searchField = Container(
           prefixText: ' ')),
 );
 
-
-
 class _list extends State {
-
   @override
-
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -133,7 +149,6 @@ class _list extends State {
   }
 }
 
-
 class DistanceSlider extends StatefulWidget {
   @override
   _DistanceSliderState createState() {
@@ -141,10 +156,7 @@ class DistanceSlider extends StatefulWidget {
   }
 }
 
-
-
 class _DistanceSliderState extends State {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -194,7 +206,7 @@ class _DistanceSliderState extends State {
                           (DistanceSliderValue > 1799)
                               ? visibility18 = true
                               : visibility18 = false;
-                              Navigator.pop(context);
+                          Navigator.pop(context);
                           Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -275,11 +287,7 @@ class RoundSliderThumbShape extends SliderComponentShape {
   }
 }
 
-
-
-
 class _market extends State {
-
   String title;
   String sub;
   String distance;
@@ -339,11 +347,7 @@ class _market extends State {
   }
 }
 
-
-
-
 class MarketItem extends StatefulWidget {
-
   String title;
   String sub;
   String distance;

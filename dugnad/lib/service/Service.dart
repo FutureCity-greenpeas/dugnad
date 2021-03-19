@@ -31,18 +31,38 @@ class _ServiceState extends State<Service> {
   @override
   Widget build(BuildContext context) {
     DistanceSliderValue = this.slider;
-    final title = 'Közeli szolgáltaátsok';
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
-        backgroundColor: Color(0xFF253334),
-        elevation: 0.0,
-      ),floatingActionButton: FloatingActionButton(
-          onPressed: () {
-          },
-          tooltip: 'Jelenleg még nem elérhető a hozzáadás',
-          child: Icon(Icons.add),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: CircleAvatar(
+                radius: 20.0,
+                backgroundImage: AssetImage('assets/images/lakokor.png'),
+                backgroundColor: Colors.transparent,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+              child: Text(
+                "Közeli Szolgáltatások",
+                style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: "Alegreya"),
+              ),
+            ),
+          ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        tooltip: 'Jelenleg még nem elérhető a hozzáadás',
+        child: Icon(Icons.add),
+      ),
       body: Center(child: _list().build(context)),
     );
   }
@@ -77,18 +97,13 @@ Widget searchField = Container(
           prefixText: ' ')),
 );
 
-
-
 class _list extends State {
-
   @override
-
   Widget build(BuildContext context) {
     return Column(
       children: [
         searchField,
         DistanceSlider(),
-
         Visibility(
             visible: visibility500,
             child: MarketItem(
@@ -123,7 +138,6 @@ class _list extends State {
   }
 }
 
-
 class DistanceSlider extends StatefulWidget {
   @override
   _DistanceSliderState createState() {
@@ -131,10 +145,7 @@ class DistanceSlider extends StatefulWidget {
   }
 }
 
-
-
 class _DistanceSliderState extends State {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -178,7 +189,7 @@ class _DistanceSliderState extends State {
                           (DistanceSliderValue > 1799)
                               ? visibility18 = true
                               : visibility18 = false;
-                              Navigator.pop(context);
+                          Navigator.pop(context);
                           Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -259,11 +270,7 @@ class RoundSliderThumbShape extends SliderComponentShape {
   }
 }
 
-
-
-
 class _market extends State {
-
   String title;
   String sub;
   String distance;
@@ -323,11 +330,7 @@ class _market extends State {
   }
 }
 
-
-
-
 class MarketItem extends StatefulWidget {
-  
   String title;
   String sub;
   String distance;
