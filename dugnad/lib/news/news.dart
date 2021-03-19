@@ -97,23 +97,40 @@ class _NewsState extends State<News> with SingleTickerProviderStateMixin {
             ),
             Padding(
               padding: EdgeInsets.all(30.0),
-              child: Container(
-                child: GridView.count(
-                  childAspectRatio: 100 / 25,
-                  crossAxisCount: 3,
-                  children: List.generate(6, (index) {
-                    return SizedBox(
-                      height: 10,
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Container(
-                          padding: EdgeInsets.only(bottom: 10),
-                          child: listcard(listTiles[index]),
-                        ),
+              child: LayoutBuilder(
+                builder: (context, constraint) {
+                  if (constraint.maxWidth > 500) {
+                    return Container(
+                      child: GridView.count(
+                        childAspectRatio: 100 / 25,
+                        crossAxisCount: 3,
+                        children: List.generate(6, (index) {
+                          return Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Container(
+                              padding: EdgeInsets.only(bottom: 10),
+                              child: listcard(listTiles[index], constraint),
+                            ),
+                          );
+                        }),
                       ),
                     );
-                  }),
-                ),
+                  } else {
+                    return Container(
+                      child: ListView(
+                        children: List.generate(6, (index) {
+                          return Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Container(
+                              padding: EdgeInsets.only(bottom: 10),
+                              child: listcard(listTiles[index], constraint),
+                            ),
+                          );
+                        }),
+                      ),
+                    );
+                  }
+                },
               ),
             ),
           ],

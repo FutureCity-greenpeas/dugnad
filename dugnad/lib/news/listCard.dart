@@ -1,7 +1,7 @@
 import 'package:dugnad/news/listitem.dart';
 import 'package:flutter/material.dart';
 
-Widget listcard(ListItem item) {
+Widget listcard(ListItem item, BoxConstraints constraint) {
   return Card(
     elevation: 2.0,
     margin: EdgeInsets.only(bottom: 20.0),
@@ -16,7 +16,7 @@ Widget listcard(ListItem item) {
           leading: Icon(
             Icons.person,
             color: Colors.green,
-            size: 48.0,
+            size: constraint.maxWidth > 500 ? 24 : 12,
           ),
           title: Text(item.title),
           subtitle: Container(child: Text(item.author)),
