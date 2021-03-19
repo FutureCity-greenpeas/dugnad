@@ -1,3 +1,4 @@
+import 'package:dugnad/markets/market.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -333,7 +334,7 @@ class HomeScreen extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Grocery()))
+                                    builder: (context) => Markets(slider:-1)))
                           },
                           child: Container(
                             padding: EdgeInsets.fromLTRB(5, 0, 5, 0),

@@ -1,38 +1,46 @@
 import 'package:flutter/material.dart';
 
+bool visibility400 = true;
+bool visibility500 = true;
+bool visibility800 = true;
+bool visibility1 = true;
+bool visibility15 = true;
+bool visibility18 = true;
+int DistanceSliderValue = -1;
 
-bool visibilityController = false;
-int DistanceSliderValue = 1800; 
+class Markets extends StatefulWidget {
+  int slider = -1;
+  Markets({Key key, this.slider}) : super(key: key);
 
-class Markets extends StatelessWidget {
+  @override
+  _MarketState createState() => _MarketState(slider: slider);
+}
 
-  Markets({Key key}) : super(key: key);
+class _MarketState extends State<Markets> {
+  int slider = -1;
+  _MarketState({this.slider}) {}
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+    DistanceSliderValue = this.slider;
     final title = 'Közeli üzletek';
-    return MaterialApp(
-      title: title,
-      theme: new ThemeData(
-          scaffoldBackgroundColor: const Color(0xFF253334),
-          fontFamily: 'Alegreya'),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-          backgroundColor: Color(0xFF253334),
-          elevation: 0.0,
-        ),
-        body: Center(
-          child: _list().build(context)
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          tooltip: 'Increment',
-          child: Icon(Icons.add),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+        backgroundColor: Color(0xFF253334),
+        elevation: 0.0,
       ),
+      body: Center(child: _list().build(context)),
     );
   }
 }
@@ -71,20 +79,57 @@ Widget searchField = Container(
 class _list extends State {
 
   @override
+
   Widget build(BuildContext context) {
     return Column(
-            children: [         
-            searchField, 
-            DistanceSlider(), 
-            MarketItem(title:'Marika paprika',sub: 'zöldség, gyümölcs',distance: '400 m',imagepath: 'assets/images/vegetables.jpg'),
-            MarketItem(title:'Senta Promet',sub: 'élelmiszer, zöldség, gyümölcs ...',distance: '500 m',imagepath: 'assets/images/sentapromet.png'),
-            MarketItem(title:'BiCi',sub: 'felszerelés, alkatrész ...',distance: '800 m',imagepath: 'assets/images/bici.jpg'),
-            MarketItem(title:'Paula a boci',sub: 'tej, sajt, túró ...',distance: '1 km',imagepath: 'assets/images/milk.jpg'),
-            MarketItem(title:'Zöldborsó',sub: 'zöldség, gyümölcs',distance: '1.5 km',imagepath: 'assets/images/veget.jpg'),
-            MarketItem(title:'Méhi',sub: 'méz',distance: '1.8 km',imagepath: 'assets/images/honey.jpg'),
-            ],
-            mainAxisAlignment: MainAxisAlignment.start,
-          );
+      children: [
+        searchField,
+        DistanceSlider(),
+        Visibility(
+            visible: visibility400,
+            child: MarketItem(
+                title: 'Marika paprika',
+                sub: 'zöldség, gyümölcs',
+                distance: '400 m',
+                imagepath: 'assets/images/vegetables.jpg')),
+        Visibility(
+            visible: visibility500,
+            child: MarketItem(
+                title: 'Senta Promet',
+                sub: 'élelmiszer, zöldség, gyümölcs ...',
+                distance: '500 m',
+                imagepath: 'assets/images/sentapromet.png')),
+        Visibility(
+            visible: visibility800,
+            child: MarketItem(
+                title: 'BiCi',
+                sub: 'felszerelés, alkatrész ...',
+                distance: '800 m',
+                imagepath: 'assets/images/bici.jpg')),
+        Visibility(
+            visible: visibility1,
+            child: MarketItem(
+                title: 'Paula a boci',
+                sub: 'tej, sajt, túró ...',
+                distance: '1 km',
+                imagepath: 'assets/images/milk.jpg')),
+        Visibility(
+            visible: visibility15,
+            child: MarketItem(
+                title: 'Zöldborsó',
+                sub: 'zöldség, gyümölcs',
+                distance: '1.5 km',
+                imagepath: 'assets/images/veget.jpg')),
+        Visibility(
+            visible: visibility18,
+            child: MarketItem(
+                title: 'Méhi',
+                sub: 'méz',
+                distance: '1.8 km',
+                imagepath: 'assets/images/honey.jpg')),
+      ],
+      mainAxisAlignment: MainAxisAlignment.start,
+    );
   }
 }
 
@@ -96,54 +141,79 @@ class DistanceSlider extends StatefulWidget {
   }
 }
 
- 
+
 
 class _DistanceSliderState extends State {
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Padding(
-      padding: EdgeInsets.all(15.0),
-      child: Center(
+      child: Padding(
+        padding: EdgeInsets.all(15.0),
+        child: Center(
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               mainAxisSize: MainAxisSize.max,
               children: [
-            Text(
-              '0 m',
-              style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-            ),
-            new Expanded(
-                child: Slider(
-                    value: DistanceSliderValue.toDouble(),
-                    min: 1.0,
-                    max: 2000.0,
-                    divisions: 400,
-                    activeColor: Color(0xFF69B09C),
-                    inactiveColor: Color(0xFFC4C4C4),
-                    label: (DistanceSliderValue < 1000)
-                        ? DistanceSliderValue.toString() + ' m'
-                        : (DistanceSliderValue / 1000).toString() + 'km',
-                    onChanged: (double newValue) {
-                      setState(() {
-                        DistanceSliderValue = newValue.round();
-                        (DistanceSliderValue > 1799)? visibilityController = true : visibilityController = false;
-                        
-
-                      });
-                    },
-                    semanticFormatterCallback: (double newValue) {
-                      return '${newValue.round()} ';
-                    })),
-            Text(
-              '2 km',
-              style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-            ),
-          ])),
-    ));
+                Text(
+                  '0 m',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.white),
+                ),
+                new Expanded(
+                  child: Slider(
+                      value: DistanceSliderValue != -1
+                          ? DistanceSliderValue.toDouble()
+                          : 1800,
+                      min: 1.0,
+                      max: 2000.0,
+                      divisions: 100,
+                      activeColor: Color(0xFF69B09C),
+                      inactiveColor: Color(0xFFC4C4C4),
+                      label: (DistanceSliderValue < 1000)
+                          ? DistanceSliderValue.toString() + ' m'
+                          : (DistanceSliderValue / 1000).toString() + 'km',
+                      onChanged: (double newValue) {
+                        setState(() {
+                          DistanceSliderValue = newValue.round();
+                          (DistanceSliderValue > 399)
+                              ? visibility18 = true
+                              : visibility400 = false;
+                          (DistanceSliderValue > 499)
+                              ? visibility18 = true
+                              : visibility500 = false;
+                          (DistanceSliderValue > 799)
+                              ? visibility18 = true
+                              : visibility800 = false;
+                          (DistanceSliderValue > 999)
+                              ? visibility18 = true
+                              : visibility1 = false;
+                          (DistanceSliderValue > 1499)
+                              ? visibility18 = true
+                              : visibility15 = false;
+                          (DistanceSliderValue > 1799)
+                              ? visibility18 = true
+                              : visibility18 = false;
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      Markets(slider: DistanceSliderValue)));
+                        });
+                      },
+                      semanticFormatterCallback: (double newValue) {
+                        return '${newValue.round()} ';
+                      }),
+                ),
+                Text(
+                  '2 km',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.white),
+                ),
+              ]),
+        ),
+      ),
+    );
   }
 }
 
@@ -208,66 +278,71 @@ class RoundSliderThumbShape extends SliderComponentShape {
 
 
 class _market extends State {
+
   String title;
   String sub;
   String distance;
   String imagepath;
 
-_market({this.title, this.sub, this.distance, this.imagepath});
+  _market({this.title, this.sub, this.distance, this.imagepath});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-  padding: const EdgeInsets.only(bottom: 0, top: 5),
-  child: Expanded(
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          height: 65,
-          padding: const EdgeInsets.only(bottom: 1),
-          child: Expanded(
-            child: Card(
-              elevation: 0.0,
-              color: Color(0xFF253334),
-              margin: EdgeInsets.only(bottom: 0.0),
-              child: Padding(
-                padding: EdgeInsets.all(0.0),
-                child: ListTile(
-                  leading: ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
-                    child: Image.asset(
-                      this.imagepath,
-                      width: 60.0,
-                      height: 60.0,
+      padding: const EdgeInsets.only(bottom: 0, top: 5),
+      child: Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              height: 65,
+              padding: const EdgeInsets.only(bottom: 1),
+              child: Expanded(
+                child: Card(
+                  elevation: 0.0,
+                  color: Color(0xFF253334),
+                  margin: EdgeInsets.only(bottom: 0.0),
+                  child: Padding(
+                    padding: EdgeInsets.all(0.0),
+                    child: ListTile(
+                      leading: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.asset(
+                          this.imagepath,
+                          width: 60.0,
+                          height: 60.0,
+                        ),
+                      ),
+                      title: Text(
+                        this.title,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      ),
+                      subtitle: Text(
+                        this.sub,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      trailing: Text(
+                        this.distance,
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
-                  ),
-                  title: Text(
-                    this.title,
-                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    this.sub,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  trailing: Text(
-                    this.distance,
-                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
             ),
-          ),
+          ],
         ),
-      ],
-    ),
-  ),
-);
+      ),
+    );
   }
 }
 
-class MarketItem extends StatefulWidget {
 
+
+
+class MarketItem extends StatefulWidget {
+  
   String title;
   String sub;
   String distance;
@@ -277,6 +352,10 @@ class MarketItem extends StatefulWidget {
 
   @override
   _market createState() {
-    return _market(title: this.title,sub:this.sub,distance: this.distance,imagepath: this.imagepath);
+    return _market(
+        title: this.title,
+        sub: this.sub,
+        distance: this.distance,
+        imagepath: this.imagepath);
   }
 }
