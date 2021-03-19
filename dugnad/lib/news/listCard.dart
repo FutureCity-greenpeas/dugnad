@@ -11,10 +11,14 @@ Widget listcard(ListItem item) {
         leading: Icon(
           Icons.person,
           color: Colors.green,
+          size: 48.0,
         ),
         title: Text(item.title),
         subtitle: Text(item.author),
-        trailing: Text(item.date),
+        trailing: Text(
+          item.date,
+          style: TextStyle(color: Colors.black),
+        ),
       ),
     ),
   );

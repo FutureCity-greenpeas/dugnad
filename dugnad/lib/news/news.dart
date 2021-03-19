@@ -75,6 +75,7 @@ class _NewsState extends State<News> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          elevation: 0.0,
           title: Text("Hirök"),
           centerTitle: true,
           bottom: PreferredSize(
@@ -101,9 +102,8 @@ class _NewsState extends State<News> with SingleTickerProviderStateMixin {
                   crossAxisCount: 2,
                   children: List.generate(6, (index) {
                     return Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Container(
-                        color: Colors.green,
                         child: Center(
                           child: listcard(listTiles[index]),
                         ),

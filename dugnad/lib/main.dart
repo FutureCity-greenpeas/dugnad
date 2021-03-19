@@ -18,6 +18,9 @@ class MyApp extends StatelessWidget {
           textTheme: TextTheme(
             bodyText2: TextStyle(color: Colors.white),
           ),
+          appBarTheme: AppBarTheme(
+            backgroundColor: HexColor("253334"),
+          ),
           iconTheme: IconThemeData(color: Colors.white),
           scaffoldBackgroundColor: HexColor("253334")),
       home: MyHomePage(title: 'Lakó-kör'),

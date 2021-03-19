@@ -23,7 +23,7 @@ class NewsRow extends StatelessWidget {
                 children: <Widget>[
                   Expanded(
                     flex: 3,
-                    child: new AspectRatio(
+                    child: AspectRatio(
                       aspectRatio: 100 / 30,
                       child: Container(
                         child: ListTile(
