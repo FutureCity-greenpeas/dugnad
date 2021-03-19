@@ -1,10 +1,10 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:dugnad/news/listitem.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 
 Widget listcard(ListItem item, context, [BoxConstraints constraint]) {
   Color c = getRndColor();
@@ -24,11 +24,7 @@ Widget listcard(ListItem item, context, [BoxConstraints constraint]) {
       child: Padding(
         padding: EdgeInsets.all(8.0),
         child: ListTile(
-          leading: Icon(
-            Icons.person,
-            color: Colors.green,
-            size: (constraint?.maxWidth ?? 600) > 500 ? 24 : 12,
-          ),
+          leading: CircleAvatar(backgroundImage: AssetImage(item.image)),
           title: Text(item.title),
           subtitle: Container(child: Text(item.author)),
           trailing: Text(
@@ -57,6 +53,7 @@ class DetailsDialog extends StatefulWidget {
   final Color c;
 
   const DetailsDialog(this.item, this.c);
+
   @override
   _DetailsDialogState createState() => _DetailsDialogState();
 }
@@ -119,7 +116,7 @@ contentBox(ListItem item, context, Color c) {
                   },
                   child: Text(
                     "Kész.",
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 18, color: Colors.white),
                   )),
             ),
           ],

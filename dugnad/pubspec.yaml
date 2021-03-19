@@ -59,6 +59,9 @@ flutter:
     - assets/images/bevasarlas.png
     - assets/images/utazas.png
     - assets/images/tevekeny.png
+    - assets/images/idontremeber.png
+    - assets/images/handsome-middle-aged-man.jpg
+    - assets/images/woman.jpg
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

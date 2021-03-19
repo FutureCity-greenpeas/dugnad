@@ -21,24 +21,24 @@ class _NewsState extends State<News> with SingleTickerProviderStateMixin {
 
   List<ListItem> listCommunityTiles = [
     ListItem(
-      "Kovács János",
+      "Lakatos Kornélia",
       "Jövőhéten szombaton tartunk egy baráti találkozót. Amennyiben túl hangosak lennénk kérem szóljanak! ",
       "Baráti összejövetel szombaton",
       "2021.03.19",
-      "assets/images/thanos.jpg",
+      "assets/images/woman.jpg",
     ),
     ListItem(
         "Nagy József",
         "Felújítjuk a fürdőszobát, így szerda délelőtt lehet hangosak leszünk. Pár óra alatt megvagyunk. Köszi a megértést. ",
         "Felújitás szerdán",
         "2021.03.10",
-        "assets/images/thanos.jpg"),
+        "assets/images/idontremeber.png"),
     ListItem(
         "Kovács János",
         "Vasárnap megyek pestre. 2 ülés szabad. Sajnos eléggé meg vagyunk pakolva, max 1 hátizsák/fő fér el. ",
         "Fuvar Pestre",
         "2021.03.14",
-        "assets/images/thanos.jpg"),
+        "assets/images/handsome-middle-aged-man.jpg"),
     ListItem(
         "Loremion Ipsonát",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis lacus odio, vel sodales sapien. ",
@@ -54,7 +54,7 @@ class _NewsState extends State<News> with SingleTickerProviderStateMixin {
     ListItem(
         "Vajda Thanos",
         "Tegnap egy hippi szakállas fazon világító mellkassal lerántottam a kesztyűmet és csettintgetve elszaladt. Ha valaki látta kérem értesítsen. ",
-        "Bosszút állnék",
+        "Bosszútállnék",
         "2019.04.25",
         "assets/images/thanos.jpg"),
   ];
@@ -62,8 +62,8 @@ class _NewsState extends State<News> with SingleTickerProviderStateMixin {
   List<ListItem> listGeneralTiles = [
     ListItem(
         "Seres Jákob",
-        "Értesítjük a kedveslakókat, hogy 2021.04.05-én vízóraleolvasás lesz a lakásban.",
-        "Vízóraleolvasás",
+        "Értesítjük a kedveslakókat, hogy 2021.04.05-én vízóra leolvasás lesz a lakásban.",
+        "Vízóra leolvasás",
         "2021.04.01",
         "assets/images/kepx.jpg"),
     ListItem(
