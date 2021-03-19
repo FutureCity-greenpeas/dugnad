@@ -18,6 +18,9 @@ class MyApp extends StatelessWidget {
           textTheme: TextTheme(
             bodyText2: TextStyle(color: Colors.white),
           ),
+          appBarTheme: AppBarTheme(
+            backgroundColor: HexColor("253334"),
+          ),
           iconTheme: IconThemeData(color: Colors.white),
           scaffoldBackgroundColor: HexColor("253334")),
       home: MyHomePage(title: 'Lakó-kör'),
@@ -35,14 +38,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

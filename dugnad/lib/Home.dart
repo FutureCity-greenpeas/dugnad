@@ -188,7 +188,7 @@ class HomeScreen extends StatelessWidget {
                                                             fontSize: 16),
                                                       ),
                                                       Text(
-                                                        "A havi közösségi\ntevékenységgel kapcsolatos\nlegújabb információk\nelérhetővé váltak.\nReméljük sokatokkal\ntalálkozunk",
+                                                        "A havi közösségi\ntevékenységgel \nkapcsolatos\nlegújabb információk\nelérhetővé váltak.\nReméljük sokatokkal\ntalálkozunk",
                                                         style: TextStyle(
                                                             fontWeight:
                                                                 FontWeight
