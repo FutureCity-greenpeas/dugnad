@@ -101,7 +101,6 @@ class _NewsState extends State<News> with SingleTickerProviderStateMixin {
         appBar: AppBar(
           elevation: 0.0,
           title: Text("Hírdetőtábla"),
-          centerTitle: true,
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(30.0),
             child: TabBar(
