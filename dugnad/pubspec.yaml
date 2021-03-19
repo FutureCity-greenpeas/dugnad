@@ -49,6 +49,13 @@ flutter:
     - assets/images/veget.jpg
     - assets/images/honey.jpg
     - assets/images/lakokor.png
+    - assets/images/beauty1.jpg
+    - assets/images/beauty2.jpg
+    - assets/images/beauty3.jpg
+    - assets/images/beauty4.png
+    - assets/images/bevasarlas.png
+    - assets/images/utazas.png
+    - assets/images/tevekeny.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

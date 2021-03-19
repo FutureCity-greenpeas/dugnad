@@ -334,7 +334,7 @@ class HomeScreen extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Markets(slider:-1)))
+                                    builder: (context) => Markets(slider:1800)))
                           },
                           child: Container(
                             padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
@@ -374,7 +374,7 @@ class HomeScreen extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Service()))
+                                    builder: (context) => Service(slider:1800)))
                           },
                           child: Container(
                             padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
