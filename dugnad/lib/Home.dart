@@ -2,6 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:dugnad/news/news.dart';
+import 'package:dugnad/grocery/Grocery.dart';
+import 'package:dugnad/travel/Travel.dart';
+import 'package:dugnad/service/Service.dart';
+import 'package:dugnad/flyer/Flyer.dart';
+import 'package:dugnad/community/Community.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -233,32 +238,41 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         flex: 5,
-                        child: Container(
-                          padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
-                          width: 100,
-                          height: 140,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Card(
-                              color: HexColor("FFD2D2"),
-                              clipBehavior: Clip.antiAlias,
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20)),
-                              ),
-                              elevation: 5,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text(
-                                    "Közös Bevásárlás",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      color: HexColor("253334"),
+                        child: InkWell(
+                          splashColor: Colors.teal.withAlpha(30),
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Grocery()))
+                          },
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                            width: 100,
+                            height: 140,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Card(
+                                color: HexColor("FFD2D2"),
+                                clipBehavior: Clip.antiAlias,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)),
+                                ),
+                                elevation: 5,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      "Közös Bevásárlás",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w300,
+                                        color: HexColor("253334"),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -266,30 +280,39 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Expanded(
                         flex: 5,
-                        child: Container(
-                          padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
-                          width: 100,
-                          height: 140,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Card(
-                              color: HexColor("69B09C"),
-                              clipBehavior: Clip.antiAlias,
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20)),
-                              ),
-                              elevation: 5,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text(
-                                    "Közös Utazás",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w300),
-                                  ),
-                                ],
+                        child: InkWell(
+                          splashColor: Colors.teal.withAlpha(30),
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Travel()))
+                          },
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                            width: 100,
+                            height: 140,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Card(
+                                color: HexColor("69B09C"),
+                                clipBehavior: Clip.antiAlias,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)),
+                                ),
+                                elevation: 5,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      "Közös Utazás",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w300),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -304,30 +327,39 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         flex: 5,
-                        child: Container(
-                          padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
-                          width: 100,
-                          height: 140,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Card(
-                              color: HexColor("6AAE72"),
-                              clipBehavior: Clip.antiAlias,
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20)),
-                              ),
-                              elevation: 5,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text(
-                                    "Közeli Üzletek",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w300),
-                                  ),
-                                ],
+                        child: InkWell(
+                          splashColor: Colors.teal.withAlpha(30),
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Grocery()))
+                          },
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                            width: 100,
+                            height: 140,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Card(
+                                color: HexColor("6AAE72"),
+                                clipBehavior: Clip.antiAlias,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)),
+                                ),
+                                elevation: 5,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      "Közeli Üzletek",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w300),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -335,32 +367,41 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Expanded(
                         flex: 5,
-                        child: Container(
-                          padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
-                          width: 100,
-                          height: 140,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Card(
-                              color: HexColor("A9D571"),
-                              clipBehavior: Clip.antiAlias,
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20)),
-                              ),
-                              elevation: 5,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text(
-                                    "Közeli Szolgáltatások",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      color: HexColor("253334"),
+                        child: InkWell(
+                          splashColor: Colors.teal.withAlpha(30),
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Service()))
+                          },
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                            width: 100,
+                            height: 140,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Card(
+                                color: HexColor("A9D571"),
+                                clipBehavior: Clip.antiAlias,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)),
+                                ),
+                                elevation: 5,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      "Közeli Szolgáltatások",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w300,
+                                        color: HexColor("253334"),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -375,30 +416,39 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         flex: 5,
-                        child: Container(
-                          padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
-                          width: 100,
-                          height: 140,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Card(
-                              color: HexColor("3E8469"),
-                              clipBehavior: Clip.antiAlias,
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20)),
-                              ),
-                              elevation: 5,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text(
-                                    "Szórólapok",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w300),
-                                  ),
-                                ],
+                        child: InkWell(
+                          splashColor: Colors.teal.withAlpha(30),
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Flyer()))
+                          },
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                            width: 100,
+                            height: 140,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Card(
+                                color: HexColor("3E8469"),
+                                clipBehavior: Clip.antiAlias,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)),
+                                ),
+                                elevation: 5,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      "Szórólapok",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w300),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -406,32 +456,41 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Expanded(
                         flex: 5,
-                        child: Container(
-                          padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
-                          width: 100,
-                          height: 140,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Card(
-                              color: HexColor("FFD2D2"),
-                              clipBehavior: Clip.antiAlias,
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20)),
-                              ),
-                              elevation: 5,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text(
-                                    "Közösségi\ntevékenység",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      color: HexColor("253334"),
+                        child: InkWell(
+                          splashColor: Colors.teal.withAlpha(30),
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Community()))
+                          },
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                            width: 100,
+                            height: 140,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Card(
+                                color: HexColor("FFD2D2"),
+                                clipBehavior: Clip.antiAlias,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)),
+                                ),
+                                elevation: 5,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      "Közösségi\ntevékenység",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w300,
+                                        color: HexColor("253334"),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
