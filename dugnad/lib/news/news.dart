@@ -22,7 +22,7 @@ class _NewsState extends State<News> with SingleTickerProviderStateMixin {
   List<ListItem> listTiles = [
     ListItem(
       "Kovács János",
-      "Jövőhéten szombaton tartunk egy baráti találkozót. Az ha túl hangosak lennénk kérem szóljanak! ",
+      "Jövőhéten szombaton tartunk egy baráti találkozót. Amennyiben túl hangosak lennénk kérem szóljanak! ",
       "Baráti összejövetel szombaton",
       "2021.03.19",
     ),
@@ -96,15 +96,18 @@ class _NewsState extends State<News> with SingleTickerProviderStateMixin {
               child: Container(child: ListView()),
             ),
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(30.0),
               child: Container(
                 child: GridView.count(
-                  crossAxisCount: 2,
+                  childAspectRatio: 100 / 25,
+                  crossAxisCount: 3,
                   children: List.generate(6, (index) {
-                    return Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Container(
-                        child: Center(
+                    return SizedBox(
+                      height: 10,
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Container(
+                          padding: EdgeInsets.only(bottom: 10),
                           child: listcard(listTiles[index]),
                         ),
                       ),
