@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dugnad/flyer/ListCard.dart';
 
 class Flyer extends StatefulWidget {
   @override
@@ -39,6 +40,7 @@ class _FlyerState extends State<Flyer> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ListCard("assets/images/tesco.png"),
             Text("flyers"),
           ],
         ),
